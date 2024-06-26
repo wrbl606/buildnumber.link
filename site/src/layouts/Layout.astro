@@ -10,9 +10,16 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta
+			name="description"
+			content="Online service that increments build number of your app."
+		/>
+		<meta
+			name="keywords"
+			content="build number online, build number service, build number api"
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,11 +29,11 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: 255, 232, 124;
+		--accent-light: 255, 229, 180;
+		--accent-dark: 255, 229, 180;
 		--accent-gradient: linear-gradient(
-			45deg,
+			-30deg,
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
 			white 60%
@@ -34,8 +41,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background: #0c0c03;
 	}
 	code {
 		font-family:
