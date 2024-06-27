@@ -123,12 +123,7 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 	}
 	.instructions {
 		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(
-			rgba(var(--accent-dark), 66%),
-			rgba(var(--accent-dark), 50%)
-		);
-		padding: 0.5rem;
+		background: gray;
 		margin-left: 0.4rem;
 		margin-right: 0.4rem;
 		border-radius: 4px;
@@ -139,14 +134,13 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 		background: rgba(var(--accent-light), 12%);
 		color: rgb(var(--accent-light));
 		border-radius: 4px;
-		padding: 0.1em 0.2em;
 	}
 	.instructions strong {
 		color: rgb(var(--accent-light));
 	}
 	pre {
 		background: rgba(var(--accent-light), 12%);
-
+		overflow: scroll;
 		border-radius: 4px;
 		padding: 0.3em 0.6em;
 	}
