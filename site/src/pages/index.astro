@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Your build number source">
 	<main>
 		<h1>
-			Use <code class="instructions">buildnumber.link/:appId</code> to:
+			Use <code class="instructions">buildnumber.link</code> to:
 		</h1>
 		<ul class="reasons">
 			<li>
@@ -16,7 +16,8 @@ import Layout from "../layouts/Layout.astro";
 			<li>
 				prevent <a href="https://stackoverflow.com/a/38847981/5503956"
 					>locking yourself out of future app updates</a
-				> (<a href="https://duckduckgo.com/?q=epoch+converter+2000000000"
+				> when using unix epoch timestamp as build number (<a
+					href="https://duckduckgo.com/?q=epoch+converter+2000000000"
 					>2033 is closer than you may think</a
 				>).
 			</li>
@@ -50,12 +51,14 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 		</ul>
 
 		<h2>FAQ</h2>
-		<p class="question">But I already have a build number</p>
+		<p class="question">
+			Do I have to bump the version to the current one first?
+		</p>
 		<p class="answer">
-			Use <code>?offset=:currentBuildNumber</code> query parameter
+			No, use <code>?offset=:currentBuildNumber</code> query parameter.
 		</p>
 		<p class="question">
-			I don’t want to leak any internal build process details
+			Is it safe? Can this leak some internal build pipeline details?
 		</p>
 		<p class="answer">
 			The service is just storing an <code>:appId -> :buildNumber</code> map (yes,
@@ -70,7 +73,7 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 			Make sure your <code>:appId</code> is at least 10 characters long (yes, you
 			can use emojis) so it’s impossible to bruteforce it. You can make sure that
 			your <code>:appId</code> is different from the one visible in published store
-			pages.
+			pages and keeping it a secret.
 		</p>
 	</main>
 </Layout>
@@ -123,7 +126,7 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 	}
 	.instructions {
 		margin-bottom: 2rem;
-		background: gray;
+		background: #413f50;
 		margin-left: 0.4rem;
 		margin-right: 0.4rem;
 		border-radius: 4px;
@@ -137,6 +140,10 @@ $ curl --data '' https://buildnumber.link/test.app.identifier
 	}
 	.instructions strong {
 		color: rgb(var(--accent-light));
+	}
+	h1 .code {
+		max-width: 100%;
+		text-wrap: stable;
 	}
 	pre {
 		background: rgba(var(--accent-light), 12%);
